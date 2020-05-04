@@ -87,36 +87,26 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-info">
-                    @can('classwork.create')
-                    <div class="box-header">
-                        <div class="">
-                            <div class="col-md-7"> 
-                                @can('classwork.create')
-                                    <a class="btn btn-info btn-sm" href="{{ URL::route('question.create', $topic->id) }}" title="Add Assignemnt or Question" ><i class="fa fa-plus-circle"></i> Add Classwork</a>
-                                @endcan
-
+                    <div class="box-body">
+                        <!-- Assignments -->
+                        <h3> <i class="fa fa-files-o"></i> Class Note(s) 
                                 @can('classwork_note.create')
                                     <a href="{{ URL::route('classwork_note.create', $topic->id) }}" class="btn btn-info btn-sm" title="Add Class Note">
                                         <i class="fa fa-file-o"></i> Add Class Note
                                     </a>
                                 @endcan
-                                </p>
-                            </div>
-                        </div>
-                    </div> 
-                    @endcan                 
-                    <div class="box-body">
-                        <!-- Assignments -->
+                        </h3>
                         <?php
                         // $topic_assignments = App\Assignment::where('topic_id', $topic-->get(); 
                         // $topic_classwork = App\Question::where('topic_id', $topic->id)->get(); 
                         ?>
                         @foreach($topic->notes as $note)
-                            <div class="box box-warning collasped-box">
+                            <div class="box collasped-box">
                                 <div class="box-header with-border x_title">
-                                    <div class="mx-3">
+                                    <div class="mx-1">
+                                        <br>
                                         <p class="lead text-primary">  <i class="fa fa-file-o"></i> 
-                                            {{$note->title}} 
+                                            <b>{{$note->title}} </b>
                                             <br>
                                             @can('classwork_note.edit')
                                                 <a class="btn btn-warning btn-sm" href="{{ URL::route('classwork_note.edit', $note->id) }}" title="Update Assignment" ><i class="fa fa-edit"></i> Edit Class Note </a>
@@ -124,6 +114,7 @@
                                         </p>
                                     </div>
                                     <div class="box-tools pull-right">
+                                        <br>
                                         <button type="button" class="btn btn-default btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                                         </button>
                                     </div>
@@ -138,12 +129,31 @@
                                 <!-- End of Note -->
                             </div>
                         @endforeach
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">
+                    <div class="box-body">
+                        <!-- Assignments -->
+                        <h3> <i class="fa fa-pencil"></i> Assignment(s)
+                                @can('classwork.create')
+                                    <a class="btn btn-info btn-sm" href="{{ URL::route('question.create', $topic->id) }}" title="Add Assignemnt or Question" ><i class="fa fa-plus-circle"></i> Add Classwork</a>
+                                @endcan
+                        </h3>
+                        <?php
+                        // $topic_assignments = App\Assignment::where('topic_id', $topic-->get(); 
+                        // $topic_classwork = App\Question::where('topic_id', $topic->id)->get(); 
+                        ?>
                         <div class="row">
-                            <div class="col-md-12 px-3">
+                            <div class="col-md-12">
                                 @foreach($topic->question as $classwork)
                                     <div class="box box-warning collasped-box">
                                         <div class="box-header with-border x_title">
-                                            <div class="mx-3">
+                                            <div class="mx-1">
                                                 <p class="lead text-primary">  <i class="fa fa-pencil"></i>  <strong>
                                                     {{AppHelper::CLASSWORK_TYPE[$classwork->classwork_type]}}
                                                     </strong> -  {{$classwork->title}}
