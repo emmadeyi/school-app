@@ -47,7 +47,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group has-feedback">
-                                            <label for="type">Duration <small>(optional)</small>
+                                            <label for="type">Duration in Minutes <small>(optional)</small>
                                                 <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Enter quiz duration in minutes"></i>
                                             </label>
                                             <input autofocus type="number" class="form-control" name="duration" placeholder="Quiz duration" value="{{ old('duration') }}">
@@ -169,7 +169,7 @@
         const module_activities = $('#module_activities');
         if (constrain_quiz) processQuizConstrains();
         $('#constrain_quiz').on('ifChecked', (e) => {
-            processQuizConstrains();            
+            processQuizConstrains();
         });
         $('#constrain_quiz').on('ifUnchecked', (e) => {
             if (!module_activities.hasClass('hide-div')) module_activities.addClass('hide-div');
