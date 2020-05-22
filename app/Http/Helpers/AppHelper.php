@@ -46,8 +46,12 @@ class AppHelper
     const USER_ACCOUNTANT = 5;
     const USER_LIBRARIAN = 6;
     const USER_RECEPTIONIST = 7;
+    const USER_DEVELOPER = 8;
+    const USER_SCHOOLADMIN = 9;
     const ACTIVE = '1';
-    const INACTIVE = '0';
+    const INACTIVE = '0'; 
+    const QUIZ_CONSTRIAN_NOTE = 1;
+    const QUIZ_CONSTRIAN_ASSIGNMENT = 2;
     const EMP_TEACHER = AppHelper::USER_TEACHER;
     const EMP_SHIFTS = [
         1 => 'Day',
@@ -97,7 +101,18 @@ class AppHelper
     const ANSWER_TYPE = [
         1 => 'Short Answer',
         2 => 'Multiple Choice',
-        3 => 'Not Applicable'
+        3 => 'Not Applicable',
+    ];
+
+    const MODULE_QUIZ = 1;
+    const SUBJECT_QUIZ = 2;
+    const EXAM_QUIZ = 3;
+
+    const QUIZ_QUESTION_TYPE = [
+        1 => 'Short Answer',
+        2 => 'Multiple Choice',
+        3 => 'Mixed',
+        4 => 'Not Applicable',
     ];
 
     const CLASSWORK_TYPE = [

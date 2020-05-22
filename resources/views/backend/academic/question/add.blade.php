@@ -10,11 +10,11 @@
     <!-- Section header -->
     <section class="content-header">
         <h1>
-            Manage Classwork
+            Add Question/ Assignment
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{URL::route('classwork.index')}}"><i class="fa fa-cubes"></i> Classworks</a></li>
+            <li><a href="{{URL::route('topic.show', $topic_id)}}"><i class="fa fa-cubes"></i> Class Activity</a></li>
             <li class="active">Add Classwork</li>
         </ol>
     </section>

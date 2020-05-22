@@ -30,8 +30,8 @@ class TopicController extends Controller
     public function create($id=0)
     {
         
-        $subjects = Subject::where('status', AppHelper::ACTIVE)
-            ->pluck('name', 'id');
+        $subjects = Subject::where('status', AppHelper::ACTIVE)->get();
+            // ->pluck('name', 'id');
 
         $teachers = Employee::where('role_id', AppHelper::EMP_TEACHER)
             ->where('status', AppHelper::ACTIVE)
@@ -60,7 +60,6 @@ class TopicController extends Controller
                 'name' => 'required|min:1|max:255',
                 'type' => 'required|numeric',
                 'class_id' => 'required|integer',
-                'teacher_id' => 'required|integer',
                 'subject_id' => 'required|integer',
             ]);
 
@@ -70,8 +69,9 @@ class TopicController extends Controller
         $topic->code = now()->timestamp;
         $topic->type = $request->type;
         $topic->class_id = $request->class_id;
-        $topic->teacher_id = $request->teacher_id;
         $topic->subject_id = $request->subject_id;
+        $topic->teacher_id = Subject::find($request->subject_id)->teacher->id;
+
         
         if($topic->save()){
             //now notify the admins about this record
@@ -96,6 +96,8 @@ class TopicController extends Controller
     public function show($id)
     {
         $topic = Topic::findOrFail($id);
+
+        // dd($topic->quiz);
         
         return view('backend.academic.classwork.list', compact('topic'));
     }

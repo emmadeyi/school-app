@@ -15,12 +15,12 @@
     <section class="content-header">
         <h1>
             Classwork Activities
-            <small>Topics</small>
+            <small>Topics/ Modules</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
             <li><a href="{{URL::route('classwork.index')}}"><i class="fa fa-dashboard"></i> Classwork</a></li>
-            <li class="active">Topics</li>
+            <li class="active">Topics/ Modules</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -51,7 +51,7 @@
                             <a class="btn btn-info btn-sm" href="{{ URL::route('student.create') }}"><i class="fa fa-plus-circle"></i> Add New</a>
                         </div> --}}
                         @can('topic.create')
-                        <a class="btn btn-info btn-sm" href="{{ URL::route('topic.create') }}"><i class="fa fa-plus-circle"></i> Add Topic</a>
+                        <a class="btn btn-info btn-sm" href="{{ URL::route('topic.create') }}"><i class="fa fa-plus-circle"></i> Add Topic/ Module</a>
                         @endcan
                     </div>
                     <!-- /.box-header -->
@@ -61,10 +61,10 @@
                             <thead>
                             <tr>
                                 <th width="5%">#</th>
-                                <th >Topic</th>
-                                <th >Subject</th>
+                                <th >Topic/ Module</th>
+                                <th >Subject/ Course</th>
                                 <th >Class</th>
-                                <th >Teacher</th>
+                                <th >Teacher/ Tutor</th>
                                 <th class="notexport" width="15%">Action</th>
                             </tr>
                             </thead>

@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         echo 'seeding users...', PHP_EOL;
 
-        $user= User::create(
+        $admin= User::create(
             [
                 'name' => 'Mr. admin',
                 'username' => 'admin',
@@ -28,7 +28,23 @@ class UsersTableSeeder extends Seeder
 
        UserRole::create(
            [
-               'user_id' => $user->id,
+               'user_id' => $admin->id,
+               'role_id' => AppHelper::USER_ADMIN
+           ]
+       );
+        $developer= User::create(
+            [
+                'name' => 'Developer',
+                'username' => 'developer',
+                'email' => 'developer@sms.com',
+                'password' => bcrypt('password'),
+                'remember_token' => null,
+            ]
+        );
+
+       UserRole::create(
+           [
+               'user_id' => $developer->id,
                'role_id' => AppHelper::USER_ADMIN
            ]
        );

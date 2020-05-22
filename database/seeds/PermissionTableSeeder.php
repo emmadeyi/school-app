@@ -664,6 +664,337 @@ class PermissionTableSeeder extends Seeder
                 "group" => "Academic"
             ],
             // collaboration end
+
+            [   "slug" => "answer.index",
+                "name" => "Answer View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "answer.show",
+                "name" => "Answer View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "answer.create",
+                "name" => "Answer Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "answer.store",
+                "name" => "Answer Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "answer.edit",
+                "name" => "Answer Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "answer.update",
+                "name" => "Answer Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "answer.destroy",
+                "name" => "Answer Delete",
+                "group" => "Academic"
+            ],
+
+            [   "slug" => "classwork_attempt.index",
+                "name" => "Classwork Attempt View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_attempt.show",
+                "name" => "Classwork Attempt View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_attempt.create",
+                "name" => "Classwork Attempt Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_attempt.store",
+                "name" => "Classwork Attempt Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_attempt.edit",
+                "name" => "Classwork Attempt Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_attempt.update",
+                "name" => "Classwork Attempt Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_attempt.destroy",
+                "name" => "Classwork Attempt Delete",
+                "group" => "Academic"
+            ],
+
+            [   "slug" => "classwork_grade.index",
+                "name" => "Classwork Grade View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.show",
+                "name" => "Classwork Grade View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.create",
+                "name" => "Classwork Grade Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.store",
+                "name" => "Classwork Grade Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.edit",
+                "name" => "Classwork Grade Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.update",
+                "name" => "Classwork Grade Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.destroy",
+                "name" => "Classwork Grade Delete",
+                "group" => "Academic"
+            ],
+
+            [   "slug" => "live_class.index",
+                "name" => "Live Class View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "live_class.show",
+                "name" => "Live Class View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "live_class.create",
+                "name" => "Live Class Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "live_class.store",
+                "name" => "Live Class Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "live_class.edit",
+                "name" => "Live Class Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "live_class.update",
+                "name" => "Live Class Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "live_class.destroy",
+                "name" => "Live Class Delete",
+                "group" => "Academic"
+            ],
+
+            [   "slug" => "forum.index",
+                "name" => "Forum View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum.show",
+                "name" => "Forum View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum.create",
+                "name" => "Forum Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum.store",
+                "name" => "Forum Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum.edit",
+                "name" => "Forum Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum.update",
+                "name" => "Forum Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum.destroy",
+                "name" => "Forum Delete",
+                "group" => "Academic"
+            ],
+
+            [   "slug" => "forum_comment.index",
+                "name" => "Forum Comment View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum_comment.show",
+                "name" => "Forum Comment View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum_comment.create",
+                "name" => "Forum Comment Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum_comment.store",
+                "name" => "Forum Comment Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum_comment.edit",
+                "name" => "Forum Comment Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum_comment.update",
+                "name" => "Forum Comment Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "forum_comment.destroy",
+                "name" => "Forum Comment Delete",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_note.index",
+                "name" => "Classwork Note View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_note.show",
+                "name" => "Classwork Note View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_note.create",
+                "name" => "Classwork Note Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_note.store",
+                "name" => "Classwork Note Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_note.edit",
+                "name" => "Classwork Note Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_note.update",
+                "name" => "Classwork Note Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_note.destroy",
+                "name" => "Classwork Note Delete",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz.index",
+                "name" => "Quiz View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz.show",
+                "name" => "Quiz View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz.create",
+                "name" => "Quiz Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_constrains.get",
+                "name" => "Quiz Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz.store",
+                "name" => "Quiz Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz.edit",
+                "name" => "Quiz Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz.update",
+                "name" => "Quiz Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz.destroy",
+                "name" => "Quiz Delete",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.index",
+                "name" => "Quiz Question View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.show",
+                "name" => "Quiz Question View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.count",
+                "name" => "Quiz Question View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question_answers.get",
+                "name" => "Quiz Question View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.create",
+                "name" => "Quiz Question Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.store",
+                "name" => "Quiz Question Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.edit",
+                "name" => "Quiz Question Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.update",
+                "name" => "Quiz Question Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_question.destroy",
+                "name" => "Quiz Question Delete",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt.index",
+                "name" => "Quiz Attempt View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt.show",
+                "name" => "Quiz Attempt View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt_questions.get",
+                "name" => "Quiz Attempt View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt.create",
+                "name" => "Quiz Attempt Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt.store",
+                "name" => "Quiz Attempt Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt.edit",
+                "name" => "Quiz Attempt Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt.update",
+                "name" => "Quiz Attempt Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_attempt.destroy",
+                "name" => "Quiz Attempt Delete",
+                "group" => "Academic"
+            ],
+
+            [   "slug" => "quiz_grade.index",
+                "name" => "Quiz Grade View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_grade.show",
+                "name" => "Quiz Grade View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_grade.create",
+                "name" => "Quiz Grade Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_grade.store",
+                "name" => "Quiz Grade Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_grade.edit",
+                "name" => "Quiz Grade Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_grade.update",
+                "name" => "Quiz Grade Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "quiz_grade.destroy",
+                "name" => "Quiz Grade Delete",
+                "group" => "Academic"
+            ],
         ];
 
         $websitePermissionList = [
@@ -1219,8 +1550,5 @@ class PermissionTableSeeder extends Seeder
             echo 'seeding '.$role->name.' permissions...', PHP_EOL;
             $role->permissions()->saveMany($permissions);
         }
-
-
-
     }
 }

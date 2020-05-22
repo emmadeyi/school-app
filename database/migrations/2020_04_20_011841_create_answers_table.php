@@ -17,7 +17,7 @@ class CreateAnswersTable extends Migration
             $table->increments('id');
             $table->string('code')->nullable();
             $table->string('title');
-            $table->enum('type', [1,2,3])->default(1); // 1 - assignment, 2 - question
+            $table->enum('type', [1,2,3])->default(1); // 1 - assignment, 2 - question, 3 - quiz
             $table->unsignedInteger('type_id');
             $table->timestamps();
             $table->softDeletes();

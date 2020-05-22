@@ -391,7 +391,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::where('id', '<>', AppHelper::USER_ADMIN)->pluck('name', 'id');
+        $roles = Role::where('id', '<>', AppHelper::USER_ADMIN)
+                ->where('id', '<>', AppHelper::USER_DEVELOPER)
+                ->pluck('name', 'id');
         $user = null;
         $role = null;
         return view('backend.user.add', compact('roles','user', 'role'));

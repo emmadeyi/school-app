@@ -49,6 +49,12 @@ class Topic extends Model
     {
         return $this->hasMany('App\Question', 'topic_id');
     }
+    
+
+    public function quiz()
+    {
+        return $this->hasMany('App\Quiz', 'topic_id');
+    }
 
     public function notes()
     {

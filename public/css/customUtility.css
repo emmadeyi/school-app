@@ -145,3 +145,49 @@
 .font-5 {
     font-size: 5rem;
 }
+
+.multi-answer-option {
+    background: rgb(246, 245, 245);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.multi-answers {
+    background: rgb(246, 245, 245);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+.multi-answer-option:hover {
+    background: #666;
+    color: #f4f4f4;
+}
+
+.multi-answer-option-selected {
+    background: #666;
+    color: #f4f4f4;
+    font-weight: 600;
+    border: 2px solid #666;
+    cursor: pointer;
+}
+
+.start-quiz-timer {
+    font-size: 4rem;
+    color: #666;
+}
+
+.quiz-duration-timer {
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 300;
+}
+
+.start-quiz-timer-counter {
+    font-size: 8rem;
+    font-weight: 500;
+    color: #666;
+}

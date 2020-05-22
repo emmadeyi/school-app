@@ -10,7 +10,7 @@
     <!-- Section header -->
     <section class="content-header">
         <h1>
-            {{$topic->name}} <small>({{AppHelper::TOPIC_TYPE[$topic->type]}}) </small> 
+            <i class="fa fa-book"></i> {{$topic->name}} <small>({{AppHelper::TOPIC_TYPE[$topic->type]}}) </small> 
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{URL::route('user.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -21,69 +21,99 @@
     <!-- ./Section header -->
     <!-- Main content -->
     <section class="content">
-        {{-- <div class="row">
-            <div class="col-lg-3 col-xs-6">
-                <div class="small-box ">
-                    <a class="small-box-footer bg-orange-dark" href="{{URL::route('topic.index')}}">
-                        <div class="icon bg-orange-dark" style="padding: 9.5px 18px 8px 18px;">
-                            <i class="fa fa-th"></i>
+    <div class="row">
+            <div class="col-md-12">
+                <div id="printableArea">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="box box-info">
+                                <div class="box-body box-profile">
+                                    <h3 class="profile-username text-left"> <i class="fa fa-files-o"></i> Note(s) 
+                                    @can('classwork_note.create')
+                                    <a href="{{ URL::route('classwork_note.create', $topic->id) }}" class="btn btn-info btn-sm pull-right" title="Add Class Note">
+                                        <i class="fa fa-file-o"></i> Add Class Note
+                                    </a>
+                                    @endcan
+                                    </h3>
+                                    <ul class="list-group list-group-unbordered" data-note-list>
+                                        @foreach($topic->notes as $note)
+                                            <li class="list-group-item" style="background-color: #FFF">
+                                                <?php $body = $note->body; ?>
+                                                <b> <a href="#" class="note" id="{{$note->id}}" data-note-body="{{ $body }}">
+                                                    <i class="fa fa-file"></i> {{$note->title}} </b></a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>                            
+                            <div class="box box-info">
+                                <div class="box-body box-profile">
+                                    <h3 class="profile-username text-left"> <i class="fa fa-pencil"></i> Assignment(s)
+                                    @can('classwork.create')
+                                        <a class="btn btn-info btn-sm pull-right" href="{{ URL::route('question.create', $topic->id) }}" title="Add Assignemnt or Question" ><i class="fa fa-plus-circle"></i> Add Classwork</a>
+                                    @endcan
+                                    </h3>
+                                    <ul class="list-group list-group-unbordered" data-classwork-list>
+                                        @foreach($topic->question as $classwork)
+                                            <li class="list-group-item" style="background-color: #FFF">
+                                                <a href="{{ URL::route('classwork.show', $classwork->id) }}" id="{{ $classwork->id }}" data-classwork="{{ $classwork }}">
+                                                    <i class="fa fa-pencil"></i> <b>{{$classwork->title}} </b> <small>({{AppHelper::ASSIGNMENT_TYPE[$classwork->type]}}) 
+                                                    @can('classwork_grade.update')  
+                                                    - ({{ $classwork->attempt->keyBy('user_id')->count() }}) 
+                                                        @if($classwork->attempt->keyBy('user_id')->count() > 1) Attempts @else Attempt @endif
+                                                    @endcan
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>                            
+                            <div class="box box-info">
+                                <div class="box-body box-profile">
+                                    <h3 class="profile-username text-left"> <i class="fa fa-calculator"></i> Quiz Tab
+                                    @can('quiz.create')
+                                        <a class="btn btn-info btn-sm pull-right" href="{{ URL::route('quiz.create', $topic->id) }}" title="Add Assignemnt or Question" ><i class="fa fa-plus-circle"></i> Add Quiz</a>
+                                    @endcan
+                                    </h3>
+                                    <ul class="list-group list-group-unbordered" data-classwork-list>
+                                        @foreach($topic->quiz as $quiz)
+                                            <li class="list-group-item" style="background-color: #FFF">
+                                                <a href="{{ URL::route('quiz.show', $quiz->id) }}" id="{{ $quiz->id }}" data-quiz="{{ $quiz }}">
+                                                    <i class="fa fa-calculator"></i> <b>{{$quiz->title}} </b>
+                                                    @can('classwork_grade.update')  
+                                                    - ({{ $classwork->attempt->keyBy('user_id')->count() }}) 
+                                                        @if($classwork->attempt->keyBy('user_id')->count() > 1) Attempts @else Attempt @endif
+                                                    @endcan
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>                            
                         </div>
-                        <div class="inner ">
-                            <h3 class="text-white">{{$topics_count}} </h3>
-                            <p class="text-white">
-                                Active Topics </p>
+
+                        <div class="col-sm-8">
+                            <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs">
+                                    <li class="active lead"><a href="#details" data-toggle="tab">Activity Details</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="details">  
+                                        <div class="row">
+                                            <div class="col-12 mx-2">
+                                                <p id="details_text">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-xs-6">
-                <div class="small-box ">
-                    <a class="small-box-footer bg-pink-light" href="{{URL::route('assignment.index')}}">
-                        <div class="icon bg-pink-light" style="padding: 9.5px 18px 8px 18px;">
-                            <i class="fa fa-clipboard"></i>
-                        </div>
-                        <div class="inner ">
-                            <h3 class="text-white">
-                                {{$questions->where("classwork_type", 1)->count()}}  </h3>
-                            <p class="text-white">
-                                Active Assignments </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-xs-6">
-                <div class="small-box ">
-                    <a class="small-box-footer bg-purple-light" href="{{URL::route('question.index')}}">
-                        <div class="icon bg-purple-light" style="padding: 9.5px 18px 8px 18px;">
-                            <i class="fa fa-list-ol"></i>
-                        </div>
-                        <div class="inner ">
-                            <h3 class="text-white">
-                                {{$questions->where("classwork_type", 2)->count()}} </h3>
-                            <p class="text-white">
-                                Active Questions </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-xs-6">
-                <div class="small-box ">
-                    <a class="small-box-footer bg-teal-light" href="{{URL::route('classwork.index')}}">
-                        <div class="icon bg-teal-light" style="padding: 9.5px 18px 8px 18px;">
-                            <i class="fa fa-files-o"></i>
-                        </div>
-                        <div class="inner ">
-                            <h3 class="text-white">
-                                0 </h3>
-                            <p class="text-white">
-                                Completed Classwork</p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
-        --}}
+        {{--
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-info">
@@ -96,10 +126,6 @@
                                     </a>
                                 @endcan
                         </h3>
-                        <?php
-                        // $topic_assignments = App\Assignment::where('topic_id', $topic-->get(); 
-                        // $topic_classwork = App\Question::where('topic_id', $topic->id)->get(); 
-                        ?>
                         @foreach($topic->notes as $note)
                             <div class="box collasped-box">
                                 <div class="box-header with-border x_title">
@@ -133,7 +159,8 @@
                     <!-- /.box-body -->
                 </div>
             </div>
-        </div>
+        </div>--}}
+        {{--
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-info">
@@ -144,10 +171,7 @@
                                     <a class="btn btn-info btn-sm" href="{{ URL::route('question.create', $topic->id) }}" title="Add Assignemnt or Question" ><i class="fa fa-plus-circle"></i> Add Classwork</a>
                                 @endcan
                         </h3>
-                        <?php
-                        // $topic_assignments = App\Assignment::where('topic_id', $topic-->get(); 
-                        // $topic_classwork = App\Question::where('topic_id', $topic->id)->get(); 
-                        ?>
+                        {{--
                         <div class="row">
                             <div class="col-md-12">
                                 @foreach($topic->question as $classwork)
@@ -234,12 +258,14 @@
 
                             </div>
                         </div>
+                        --}}
                     </div>
                     <!-- /.box-body -->
                 </div>
             </div>
         </div>
-
+        --}}
+            
     </section>
     <!-- /.content -->
 @endsection
@@ -254,7 +280,17 @@
             window.excludeFilterComlumns = [0,6,7];
             Academic.subjectInit();
             $('title').text($('title').text() + '-' + $('select[name="class_id"] option[selected]').text());
-        });
+        });   
+
+        // const notes_list = document.querySelector('[data-note-list]')
+
+        document.querySelector('[data-note-list]').addEventListener('click', function(e){
+            e.preventDefault()
+            if(e.target.tagName.toLowerCase() === 'a') {
+                const body = e.target.getAttribute('data-note-body')
+                document.querySelector('#details_text').innerHTML = body
+            }         
+        })     
     </script>
 @endsection
 <!-- END PAGE JS-->

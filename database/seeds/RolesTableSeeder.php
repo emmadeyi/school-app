@@ -14,6 +14,7 @@ class RolesTableSeeder extends Seeder
     {
         echo 'seeding roles...', PHP_EOL;
 
+        
         Role::create(
             [
                 'name' => 'Admin',
@@ -58,6 +59,18 @@ class RolesTableSeeder extends Seeder
             ]
         );
 
+        Role::create(
+            [
+                'name' => 'Developer',
+                'deletable' => false,
+            ]
+        );
+        Role::create(
+            [
+                'name' => 'SchoolAdmin',
+                'deletable' => false,
+            ]
+        );
 
     }
 

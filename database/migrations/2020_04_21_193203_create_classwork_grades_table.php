@@ -19,8 +19,8 @@ class CreateClassworkGradesTable extends Migration
             $table->string('code')->nullable();
             $table->string('value');
             // $table->integer('count')->default(0);
-            $table->enum('type', [1,2,3])->default(1); // 1 - assignment, 2 - question
-            $table->unsignedInteger('classwork_id');
+            $table->enum('type', [1,2,3])->default(1); // 1 - assignment, 2 - question, 3 - quiz
+            $table->unsignedInteger('classwork_id'); //type_id
             $table->unsignedInteger('answer_id')->nullable();
             $table->unsignedInteger('user_id');
             $table->timestamps();

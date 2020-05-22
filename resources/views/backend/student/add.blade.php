@@ -421,7 +421,6 @@
             window.section_list_url = '{{URL::Route("academic.section")}}';
             window.subject_list_url = '{{URL::Route("academic.subject")}}';
             Academic.studentInit();
-
         });
     </script>
 @endsection

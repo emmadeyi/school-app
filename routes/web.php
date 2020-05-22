@@ -254,6 +254,16 @@ Route::group(
 
     Route::get('academic/classwork/{id}/classwork_note/add', 'ClassworkNoteController@create')->name('classwork_note.create');
     Route::resource('academic/classwork/classwork_note', 'ClassworkNoteController', ['except' => 'create']);
+    
+    Route::get('academic/classwork/{id}/quiz/constrains', 'QuizController@getConstrains')->name('quiz_constrains.get');
+    Route::get('academic/classwork/{id}/quiz/question/count', 'QuizController@getQuestionCount')->name('quiz_question.count');
+    Route::get('academic/classwork/{id}/quiz/add', 'QuizController@create')->name('quiz.create');
+    Route::resource('academic/classwork/quiz', 'QuizController', ['except' => 'create']);
+    Route::resource('academic/classwork/quiz_question', 'QuizQuestionController');
+    Route::get('academic/classwork/quiz_attempt/{id}', 'QuizAttemptController@create')->name('quiz_attempt.create');
+    Route::get('academic/classwork/quiz_attempt/{id}/questions', 'QuizAttemptController@getAttemptQuestions')->name('quiz_attempt_questions.get');
+    Route::resource('academic/classwork/quiz_attempt', 'QuizAttemptController', ['except' => 'create']);
+    Route::resource('academic/classwork/quiz_grade', 'QuizGradeController');
 
 
     // teacher routes

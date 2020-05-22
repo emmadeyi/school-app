@@ -52,16 +52,16 @@
         ?>
           <li @if($modules->count() > 0)  class="treeview" @endif >
             <a @if($modules->count() <= 0 ||  $modules->count() == null) href="{{ URL::route('classwork.index') }}"@else href="#" @endif>
-            <i class="fa fa-calculator"></i> <span>Class Activities</span>
+            <i class="fa fa-cubes"></i> <span>Class Activities</span>
             @if($modules->count() > 0)
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
             @endif
           </a>
-            
+          @if($modules->count() > 0)
           <ul class="treeview-menu">
-            <li @if($modules->count() > 0)  class="treeview" @endif >
+            {{--<li @if($modules->count() > 0)  class="treeview" @endif >
               <a href="{{ URL::route('classwork.index') }}">
                 <i class="fa fa-archive"></i> <span>By Class Modules</span>
                 @if($modules->count() > 0)
@@ -86,10 +86,15 @@
                   @endforeach
                 </ul>
               @endif
+            </li> --}}
+            <li>
+              <a href="{{ URL::route('topic.create') }}">
+                <i class="fa fa-plus"></i> <span>Add Topic/ Module</span>
+              </a>
             </li>
             <li @if($bySubjects->count() > 0) class="treeview" @endif >
               <a href="{{ URL::route('academic.subject') }}">
-                <i class="fa icon-subject"></i> <span>By Subjects</span>
+                <i class="fa icon-subject"></i> <span>Subjects/ Modules</span>
                  @if($bySubjects->count() > 0)
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
@@ -104,7 +109,7 @@
                     class="treeview"
                     @endif
                     >
-                      <a href="{{ URL::route('topic.show', $module->id) }}">
+                      <a href="#">
                         <i class="fa icon-subject"></i> <span>{{ $subject->subject->name }}</span>
                         @if($modules->where('subject_id', $subject->subject->id)->count() > 0)
                         <span class="pull-right-container">
@@ -127,10 +132,31 @@
                       @endif
                     </li>
                   @endforeach
+                    <li>
+                      <a href="{{ URL::route('classwork.index') }}">
+                        <i class="fa icon-subject"></i> <span>All Modules</span>
+                      </a>
+                    </li>
                 </ul>
               @endif
             </li>
+            <li>
+              <a href="{{ URL::route('academic.subject') }}">
+                <i class="fa fa-bar-chart"></i> <span>Grades</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ URL::route('academic.subject') }}">
+                <i class="fa fa-pencil"></i> <span>Assignments</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ URL::route('academic.subject') }}">
+                <i class="fa fa-calculator"></i> <span>Quiz</span>
+              </a>
+            </li>
           </ul>
+          @endif
         </li>
       @endcan
       @can('teacher.index')

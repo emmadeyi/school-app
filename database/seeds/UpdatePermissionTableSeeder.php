@@ -14,90 +14,90 @@ class UpdatePermissionTableSeeder extends Seeder
     {
         $permissions = [
                         // Classwork
-            // [   "slug" => "answer.index",
-            //     "name" => "Answer View",
-            //     "group" => "Academic"
-            // ],
-            // [   "slug" => "answer.show",
-            //     "name" => "Answer View",
-            //     "group" => "Academic"
-            // ],
-            // [   "slug" => "answer.create",
-            //     "name" => "Answer Create",
-            //     "group" => "Academic"
-            // ],
-            // [   "slug" => "answer.store",
-            //     "name" => "Answer Create",
-            //     "group" => "Academic"
-            // ],
-            // [   "slug" => "answer.edit",
-            //     "name" => "Answer Edit",
-            //     "group" => "Academic"
-            // ],
-            // [   "slug" => "answer.update",
-            //     "name" => "Answer Edit",
-            //     "group" => "Academic"
-            // ],
-            // [   "slug" => "answer.destroy",
-            //     "name" => "Answer Delete",
-            //     "group" => "Academic"
-            // ],
-
-            [   "slug" => "classwrok_attempt.index",
-                "name" => "Classwort Attempt View",
+            [   "slug" => "answer.index",
+                "name" => "Answer View",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_attempt.show",
-                "name" => "Classwort Attempt View",
+            [   "slug" => "answer.show",
+                "name" => "Answer View",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_attempt.create",
-                "name" => "Classwort Attempt Create",
+            [   "slug" => "answer.create",
+                "name" => "Answer Create",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_attempt.store",
-                "name" => "Classwort Attempt Create",
+            [   "slug" => "answer.store",
+                "name" => "Answer Create",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_attempt.edit",
-                "name" => "Classwort Attempt Edit",
+            [   "slug" => "answer.edit",
+                "name" => "Answer Edit",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_attempt.update",
-                "name" => "Classwort Attempt Edit",
+            [   "slug" => "answer.update",
+                "name" => "Answer Edit",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_attempt.destroy",
-                "name" => "Classwort Attempt Delete",
+            [   "slug" => "answer.destroy",
+                "name" => "Answer Delete",
                 "group" => "Academic"
             ],
 
-            [   "slug" => "classwrok_grade.index",
-                "name" => "Classwort Grade View",
+            [   "slug" => "classwork_attempt.index",
+                "name" => "Classwork Attempt View",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_grade.show",
-                "name" => "Classwort Grade View",
+            [   "slug" => "classwork_attempt.show",
+                "name" => "Classwork Attempt View",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_grade.create",
-                "name" => "Classwort Grade Create",
+            [   "slug" => "classwork_attempt.create",
+                "name" => "Classwork Attempt Create",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_grade.store",
-                "name" => "Classwort Grade Create",
+            [   "slug" => "classwork_attempt.store",
+                "name" => "Classwork Attempt Create",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_grade.edit",
-                "name" => "Classwort Grade Edit",
+            [   "slug" => "classwork_attempt.edit",
+                "name" => "Classwork Attempt Edit",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_grade.update",
-                "name" => "Classwort Grade Edit",
+            [   "slug" => "classwork_attempt.update",
+                "name" => "Classwork Attempt Edit",
                 "group" => "Academic"
             ],
-            [   "slug" => "classwrok_grade.destroy",
-                "name" => "Classwort Grade Delete",
+            [   "slug" => "classwork_attempt.destroy",
+                "name" => "Classwork Attempt Delete",
+                "group" => "Academic"
+            ],
+
+            [   "slug" => "classwork_grade.index",
+                "name" => "Classwork Grade View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.show",
+                "name" => "Classwork Grade View",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.create",
+                "name" => "Classwork Grade Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.store",
+                "name" => "Classwork Grade Create",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.edit",
+                "name" => "Classwork Grade Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.update",
+                "name" => "Classwork Grade Edit",
+                "group" => "Academic"
+            ],
+            [   "slug" => "classwork_grade.destroy",
+                "name" => "Classwork Grade Delete",
                 "group" => "Academic"
             ],
 
